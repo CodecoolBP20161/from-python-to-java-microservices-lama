@@ -24,6 +24,7 @@ public class ReviewAPIController {
     It returns this JSON as a String
      */
     public String getReviews(Request req, Response res){
+        res.header("Access-Control-Allow-Origin", "*");
         try {
             String[][] reviews = apiService.findReviews(req.queryParams(CATEGORY_PARAM_KEY));
             JsonObjectBuilder builder = Json.createObjectBuilder();
